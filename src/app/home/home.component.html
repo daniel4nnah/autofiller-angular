@@ -1,1 +1,22 @@
-<p>home works!</p>
+<div class="main-container">
+    <mat-drawer-container class="example-container">
+        <mat-drawer opened #drawer class="side-nav" mode="side" position="end"
+        [style.width]="sidenavWidth()"  [@sidenavAnimation]="collapsed() ? 'expanded' : 'collapsed'">
+            <button routerLink="fill_data"> Send Form </button>
+            <span class="material-symbols-outlined" type="button" mat-button (click)="collapsed.set(!collapsed())">
+                menu
+            </span>
+            @if(collapsed()) {
+                <span > Toggle side menu </span>
+            }
+        </mat-drawer>
+        
+        <mat-drawer-content [style.margin-right]="sidenavWidth()">            
+            <div class="component-rendering">
+                <router-outlet />
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>
+
+

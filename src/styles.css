@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container{
+    background-color: #fff;
+    width: 90vw;
+    height: 100vh;
+    border:  5px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
+    display: flex;
+    margin-top: 10vh;
+}
+
+.example-container{
+    width: 100%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
