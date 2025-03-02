@@ -6,9 +6,7 @@
             <span class="material-symbols-outlined" type="button" mat-button (click)="collapsed.set(!collapsed())">
                 menu
             </span>
-            @if(collapsed()) {
-                <span > Toggle side menu </span>
-            }
+            <span *ngIf="collapsed()"> Toggle side menu </span>
         </mat-drawer>
         
         <mat-drawer-content [style.margin-right]="sidenavWidth()">            

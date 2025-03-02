@@ -4,11 +4,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { signal } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule, MatSidenavModule, MatButtonModule ],
+  imports: [RouterModule, MatSidenavModule, MatButtonModule, CommonModule ],
   animations: [
     trigger('sidenavAnimation', [
       state('collapsed', style({ width: '65px' })),
