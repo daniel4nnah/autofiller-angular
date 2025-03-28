@@ -3,11 +3,17 @@ import { Component, Inject } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {provideNativeDateAdapter} from '@angular/material/core';
+import { MatNativeDateModule } from '@angular/material/core'; // Ensure this is included
+
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [ MatFormFieldModule, MatInputModule, ReactiveFormsModule],
+  imports: [ MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule],
+  providers: [provideNativeDateAdapter()],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })
@@ -37,6 +43,10 @@ export class FormComponent {
       lesson: '1',
       lesson_recording: 'aaaaaa'
     })
+  }
+
+  onSubmit(){
+    console.log(this.form.value)
   }
 
 }

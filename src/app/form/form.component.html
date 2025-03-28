@@ -1,8 +1,40 @@
-<p style="color: red">form works!</p>
+<h1 class="title"> 
+    <span> Send your data! </span>
+</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-wrapper">
+        <mat-form-field appearance="outline">
+            <label for="lesson_recording"> Zoom URL </label>
+            <input matInput placeholder="Placeholder" formControlName="lesson_recording">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <label for="group_type"> Group Type </label>
+            <mat-select placeholder="Group Type" formControlName="group_type">
+                <mat-option [value]="'Premium group (PRM_COL...)'">Premium group (PRM_COL...)</mat-option>
+                <mat-option [value]="'General group (PRM_COL...)'">General group (PRM_COL...)</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <label for="group"> Group </label>
+            <input matInput placeholder="Placeholder" formControlName="group">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <label for="module"> Module </label>
+            <input matInput placeholder="Placeholder" formControlName="module">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <label for="lesson"> Lesson </label>
+            <input matInput placeholder="Placeholder" formControlName="lesson">
+        </mat-form-field>
 
-<div [formGroup]="form">
-    <mat-form-field appearance="outline">
-        <label> Email </label>
-        <input matInput placeholder="Placeholder" formControlName="email">
-    </mat-form-field>
-</div>
+        <button mat-raised-button color="primary" type="submit"> Send </button>
+    </div>
+
+</form>
